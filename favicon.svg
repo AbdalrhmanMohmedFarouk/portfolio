@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141923"/>
+      <stop offset="100%" stop-color="#0b0d12"/>
+    </linearGradient>
+    <!-- Flutter Cyan to Blue Gradient -->
+    <linearGradient id="flTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#54C5F8"/>
+      <stop offset="100%" stop-color="#29B6F6"/>
+    </linearGradient>
+    <linearGradient id="flMid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29B6F6"/>
+      <stop offset="100%" stop-color="#02569B"/>
+    </linearGradient>
+    <linearGradient id="flBot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01579B"/>
+      <stop offset="100%" stop-color="#002D56"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#02569B" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Modern Rounded Squircle Container -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
+  <rect width="62" height="62" x="1" y="1" rx="15" fill="none" stroke="#232937" stroke-width="1.5"/>
+  <rect width="62" height="62" x="1" y="1" rx="15" fill="none" stroke="#54C5F8" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Flutter Symbol -->
+  <g transform="translate(12, 9) scale(0.65)" filter="url(#glow)">
+    <!-- Top Wing -->
+    <path d="M 37.8 0 L 0 37.8 L 11.7 49.5 L 61.2 0 Z" fill="url(#flTop)"/>
+    <!-- Bottom Lower Wing -->
+    <path d="M 37.8 23.4 L 14.4 46.8 L 26.1 58.5 L 49.5 35.1 Z" fill="url(#flMid)"/>
+    <!-- Bottom Fold / Dark Accent -->
+    <path d="M 26.1 58.5 L 37.8 70.2 L 49.5 58.5 L 37.8 46.8 Z" fill="url(#flBot)"/>
+  </g>
+</svg>
