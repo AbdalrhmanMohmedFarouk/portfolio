@@ -793,10 +793,23 @@
                 <li><span>WhatsApp</span><a href="https://wa.me/201551167826" target="_blank"
                         rel="noopener">01551167826</a></li>
             </ul>
-            <div class="cta"><a class="btn fill" href="https://www.linkedin.com/in/abdalrhmanmohmedmobildev/"
-                    target="_blank" rel="noopener">LinkedIn</a><a class="btn"
-                    href="https://github.com/AbdalrhmanMohmedFarouk" target="_blank" rel="noopener">GitHub</a><a
-                    class="btn" href="Abdalrhman_Mohmed_Flutter.pdf" download>Download CV</a></div>
+            <div class="cta">
+              <a class="btn fill" href="https://www.linkedin.com/in/abdalrhmanmohmedmobildev/"
+                 target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="https://github.com/AbdalrhmanMohmedFarouk"
+                 target="_blank" rel="noopener">GitHub</a>
+              <a id="btn-download-cv-2" class="btn btn-cv" href="#" download
+                 aria-label="Download Abdalrhman Mohmed's CV as PDF">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2.5"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV
+              </a>
+            </div>
         </div>
     </section>
     <footer>© Abdalrhman Mohmed · Built with care</footer>
@@ -833,17 +846,22 @@
       downloadAs: "Abdalrhman_Mohmed_Flutter_CV.pdf"
     };
 
-    // Wire up the download button — no need to touch anything below this line
+    // Wire up ALL download buttons — no need to touch anything below this line
     (function () {
-      const btn = document.getElementById("btn-download-cv");
-      if (!btn) return;
-      btn.href = encodeURIComponent(CV_CONFIG.fileName);
-      btn.download = CV_CONFIG.downloadAs;
+      const url = encodeURIComponent(CV_CONFIG.fileName);
+      const dl  = CV_CONFIG.downloadAs;
 
-      // Ripple feedback on click
-      btn.addEventListener("click", function () {
-        this.classList.add("downloading");
-        setTimeout(() => this.classList.remove("downloading"), 900);
+      ["btn-download-cv", "btn-download-cv-2"].forEach(function (id) {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        btn.href     = url;
+        btn.download = dl;
+
+        // Ripple feedback on click
+        btn.addEventListener("click", function () {
+          this.classList.add("downloading");
+          setTimeout(() => this.classList.remove("downloading"), 900);
+        });
       });
     })();
   </script>
