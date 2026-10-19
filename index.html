@@ -635,13 +635,9 @@
                 <div class="cta">
                   <a class="btn fill" href="#work">See my work</a>
                   <a class="btn" href="https://github.com/AbdalrhmanMohmedFarouk" target="_blank" rel="noopener">GitHub</a>
-                  <!-- ═══════════════════════════════════════════════════════════
-                       CV DOWNLOAD BUTTON
-                       To change the CV file: update CV_CONFIG.fileName below.
-                       Just rename/replace the PDF in the portfolio folder and
-                       set the new filename here — one change, done.
-                  ══════════════════════════════════════════════════════════════ -->
-                  <a id="btn-download-cv" class="btn btn-cv" href="#" download
+                  <!-- ✏️  To update your CV: replace CV.pdf in the portfolio folder with your new PDF.
+                       Keep the filename as CV.pdf and it will work automatically. -->
+                  <a class="btn btn-cv" href="CV.pdf" download="Abdalrhman_Mohmed_CV.pdf"
                      aria-label="Download Abdalrhman Mohmed's CV as PDF">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2.5"
@@ -798,7 +794,7 @@
                  target="_blank" rel="noopener">LinkedIn</a>
               <a class="btn" href="https://github.com/AbdalrhmanMohmedFarouk"
                  target="_blank" rel="noopener">GitHub</a>
-              <a id="btn-download-cv-2" class="btn btn-cv" href="#" download
+              <a class="btn btn-cv" href="CV.pdf" download="Abdalrhman_Mohmed_CV.pdf"
                  aria-label="Download Abdalrhman Mohmed's CV as PDF">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2.5"
@@ -832,39 +828,8 @@
             addEventListener('scroll', upd, { passive: true }); upd()
         })();
     </script>
-  <!-- ╔══════════════════════════════════════════════════════════════╗
-       ║  CV CONFIG — change only this object to update your CV.    ║
-       ║  1. Drop the new PDF into the portfolio folder.            ║
-       ║  2. Update fileName below. That's it.                      ║
-       ╚══════════════════════════════════════════════════════════════╝ -->
-  <script>
-    const CV_CONFIG = {
-      // ← UPDATE THIS to match your actual PDF filename in the folder
-      fileName: "Abdalrhman Mohemd Flutter.pdf",
-
-      // Label shown on download (browser saves with this name)
-      downloadAs: "Abdalrhman_Mohmed_Flutter_CV.pdf"
-    };
-
-    // Wire up ALL download buttons — no need to touch anything below this line
-    (function () {
-      const url = encodeURIComponent(CV_CONFIG.fileName);
-      const dl  = CV_CONFIG.downloadAs;
-
-      ["btn-download-cv", "btn-download-cv-2"].forEach(function (id) {
-        const btn = document.getElementById(id);
-        if (!btn) return;
-        btn.href     = url;
-        btn.download = dl;
-
-        // Ripple feedback on click
-        btn.addEventListener("click", function () {
-          this.classList.add("downloading");
-          setTimeout(() => this.classList.remove("downloading"), 900);
-        });
-      });
-    })();
-  </script>
+  <!-- ✏️  To update your CV: just replace CV.pdf in the portfolio folder with your new PDF.
+       Keep the filename as CV.pdf — no code changes needed. -->
 </body>
 
 </html>
