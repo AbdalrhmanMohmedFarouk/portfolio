@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="hero-profile-card">
           <div className="profile-img-container">
             <img
-              src="/images/profile.jpg"
+              src="images/profile.jpg"
               alt={personalInfo.name}
               className="profile-img"
               loading="eager"

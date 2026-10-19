@@ -50,10 +50,10 @@ export const projects = [
     tech: ["Flutter", "Dart", "BLoC", "Clean Architecture", "REST API", "Hive"],
     github: "https://github.com/AbdalrhmanMohmedFarouk",
     screenshots: [
-      "/images/tasky-1.jpg",
-      "/images/tasky-2.jpg",
-      "/images/tasky-3.jpg",
-      "/images/tasky-4.jpg"
+      "images/tasky-1.jpg",
+      "images/tasky-2.jpg",
+      "images/tasky-3.jpg",
+      "images/tasky-4.jpg"
     ]
   },
   {
@@ -71,10 +71,10 @@ export const projects = [
     tech: ["Flutter", "REST API", "Dio", "State Management", "Shared Preferences"],
     github: "https://github.com/AbdalrhmanMohmedFarouk",
     screenshots: [
-      "/images/newst-1.jpg",
-      "/images/newst-2.jpg",
-      "/images/newst-3.jpg",
-      "/images/newst-4.jpg"
+      "images/newst-1.jpg",
+      "images/newst-2.jpg",
+      "images/newst-3.jpg",
+      "images/newst-4.jpg"
     ]
   },
   {
@@ -92,10 +92,10 @@ export const projects = [
     tech: ["Flutter", "TMDB API", "BLoC", "CachedNetworkImage", "Clean Architecture"],
     github: "https://github.com/AbdalrhmanMohmedFarouk",
     screenshots: [
-      "/images/moovy-1.jpg",
-      "/images/moovy-2.jpg",
-      "/images/moovy-3.jpg",
-      "/images/moovy-4.jpg"
+      "images/moovy-1.jpg",
+      "images/moovy-2.jpg",
+      "images/moovy-3.jpg",
+      "images/moovy-4.jpg"
     ]
   }
 ];
