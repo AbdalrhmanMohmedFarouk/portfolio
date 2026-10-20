@@ -15,7 +15,7 @@ export default function Hero() {
 
           <h1>
             Abdalrhman<br />
-            <em>Mohmed</em>
+            <em style={{ display: 'inline-block', paddingRight: '0.35em', letterSpacing: '0.02em', overflow: 'visible' }}>Mohmed</em>
           </h1>
 
           <p className="lead">{personalInfo.tagline}</p>
