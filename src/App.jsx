@@ -21,6 +21,18 @@ export default function App() {
     return () => window.removeEventListener('pointermove', handlePointerMove);
   }, []);
 
+  const handleNavigateImage = (direction) => {
+    if (!selectedImage || !selectedImage.allScreens) return;
+    const len = selectedImage.allScreens.length;
+    const nextIdx = (selectedImage.currentIndex + direction + len) % len;
+    setSelectedImage({
+      ...selectedImage,
+      src: selectedImage.allScreens[nextIdx],
+      currentIndex: nextIdx,
+      alt: `${selectedImage.title} screen ${nextIdx + 1}`
+    });
+  };
+
   return (
     <div className="portfolio-app">
       <div className="ambient" />
@@ -37,6 +49,7 @@ export default function App() {
       <ImageModal
         image={selectedImage}
         onClose={() => setSelectedImage(null)}
+        onNavigate={handleNavigateImage}
       />
     </div>
   );

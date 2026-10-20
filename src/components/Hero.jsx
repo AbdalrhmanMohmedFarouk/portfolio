@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ExternalLink, ArrowRight } from 'lucide-react';
+import { Download, ExternalLink, ArrowRight, Code2, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
@@ -9,6 +9,7 @@ export default function Hero() {
         <div>
           <div className="kicker">
             <span className="kicker-dot" />
+            <Sparkles size={13} style={{ color: 'var(--flutter-cyan)' }} />
             {personalInfo.title} · {personalInfo.location}
           </div>
 
@@ -21,7 +22,7 @@ export default function Hero() {
 
           <div className="cta">
             <a className="btn fill" href="#work">
-              See my work <ArrowRight size={16} />
+              Explore Projects <ArrowRight size={16} />
             </a>
             <a
               className="btn"
@@ -29,7 +30,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub <ExternalLink size={15} />
+              GitHub Profile <ExternalLink size={15} />
             </a>
             <a
               className="btn btn-cv"
@@ -46,16 +47,19 @@ export default function Hero() {
         <div className="hero-profile-card">
           <div className="profile-img-container">
             <img
-              src="images/profile.jpg"
+              src={personalInfo.profileImage}
               alt={personalInfo.name}
               className="profile-img"
-              loading="eager"
             />
+            <div className="profile-badge-overlay">
+              <Code2 size={14} style={{ color: '#40D0FD' }} />
+              <span>Flutter Specialist</span>
+            </div>
           </div>
 
           <div className="stats">
             {personalInfo.stats.map((stat, idx) => (
-              <div key={idx}>
+              <div key={idx} className="stat-box">
                 <div className="stat-n">{stat.number}</div>
                 <div className="stat-l">{stat.label}</div>
               </div>

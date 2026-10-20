@@ -10,9 +10,8 @@ html = html.replace(/href="\.\/favicon-[^"]*\.svg"/g, 'href="favicon.svg"');
 html = html.replace(/href="\.\/favicon-[^"]*\.png"/g, 'href="favicon.png"');
 html = html.replace(/href="\.\/favicon-[^"]*\.ico"/g, 'href="favicon.ico"');
 
-// Normalize image paths
-html = html.replace(/src="\/images\//g, 'src="images/');
+// Normalize asset and image paths
 html = html.replace(/href="\/assets\//g, 'href="assets/');
 
 fs.writeFileSync('index.html', html, 'utf8');
-console.log('index.html successfully updated to uncorrupted standalone React build!');
+console.log('Root index.html updated to standalone React build!');

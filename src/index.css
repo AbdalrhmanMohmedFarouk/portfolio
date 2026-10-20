@@ -1,22 +1,24 @@
 :root {
-  --bg: #0b0d12;
-  --surface: #12151c;
-  --surface-card: #141822;
-  --surface-hover: #1b212f;
-  --line: #232937;
-  --line-highlight: rgba(125, 180, 255, 0.3);
-  --flutter-cyan: #40D0FD;
+  --bg: #07090e;
+  --surface: #0e121a;
+  --surface-card: #131824;
+  --surface-hover: #192030;
+  --line: #1e2638;
+  --line-highlight: rgba(64, 208, 253, 0.4);
+  --flutter-cyan: #00E5FF;
+  --flutter-sky: #40D0FD;
   --flutter-blue: #02569B;
-  --crema: #7db4ff;
-  --text: #eef2f8;
-  --muted: #8e98a8;
-  --accent-green: #52e5a4;
+  --crema: #85baff;
+  --text: #f0f4fc;
+  --muted: #8b96a8;
+  --accent-green: #00E676;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 25px rgba(64, 208, 253, 0.2);
+  --radius-phone: 24px;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px rgba(0, 229, 255, 0.25);
 }
 
 *,
@@ -42,21 +44,21 @@ body {
   min-height: 100vh;
 }
 
-/* Ambient dynamic background lighting */
+/* Dynamic Ambient Lighting */
 .ambient {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   background: 
-    radial-gradient(circle 600px at var(--mx, 50%) var(--my, 20%), rgba(64, 208, 253, 0.08), transparent 70%),
-    radial-gradient(circle 500px at 85% 65%, rgba(2, 86, 155, 0.2), transparent 60%),
-    radial-gradient(circle 400px at 15% 85%, rgba(125, 180, 255, 0.06), transparent 50%);
-  transition: background 0.15s ease-out;
+    radial-gradient(circle 700px at var(--mx, 50%) var(--my, 20%), rgba(0, 229, 255, 0.08), transparent 70%),
+    radial-gradient(circle 600px at 85% 65%, rgba(2, 86, 155, 0.25), transparent 60%),
+    radial-gradient(circle 500px at 15% 85%, rgba(64, 208, 253, 0.07), transparent 50%);
+  transition: background 0.1s ease-out;
 }
 
 .wrap {
-  max-width: 1140px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -71,23 +73,23 @@ h1, h2, h3, .brand-font {
 }
 
 h1 {
-  font-size: clamp(40px, 6vw, 68px);
+  font-size: clamp(42px, 6.2vw, 70px);
   line-height: 1.05;
-  letter-spacing: -1.8px;
-  margin-bottom: 20px;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
 }
 
 h1 em {
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, var(--flutter-cyan), var(--crema));
+  background: linear-gradient(135deg, var(--flutter-cyan), #7db4ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  font-size: clamp(30px, 4vw, 44px);
-  letter-spacing: -1px;
+  font-size: clamp(32px, 4.2vw, 46px);
+  letter-spacing: -1.2px;
 }
 
 h2 span {
@@ -106,23 +108,23 @@ h2 span {
   gap: 8px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--flutter-cyan);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .lead {
   font-size: 18px;
   color: var(--muted);
-  max-width: 560px;
-  margin-bottom: 34px;
-  line-height: 1.65;
+  max-width: 580px;
+  margin-bottom: 36px;
+  line-height: 1.68;
 }
 
-/* Section Containers */
+/* Sections */
 section {
-  padding: 90px 0;
+  padding: 96px 0;
   border-top: 1px solid var(--line);
   position: relative;
   z-index: 1;
@@ -133,10 +135,10 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background: rgba(11, 13, 18, 0.82);
-  border-bottom: 1px solid rgba(35, 41, 55, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(7, 9, 14, 0.85);
+  border-bottom: 1px solid rgba(30, 38, 56, 0.7);
   transition: background 0.3s ease;
 }
 
@@ -144,32 +146,38 @@ nav .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 72px;
 }
 
 .logo-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
 }
 
 .logo-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #141923, #0b0d12);
-  border: 1px solid rgba(64, 208, 253, 0.4);
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #131a29, #080a10);
+  border: 1px solid rgba(0, 229, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 14px rgba(64, 208, 253, 0.2);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-wrap:hover .logo-badge {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.45);
 }
 
 .logo-text {
   font-family: 'Fraunces', serif;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 21px;
   color: var(--text);
   letter-spacing: -0.5px;
 }
@@ -177,7 +185,7 @@ nav .wrap {
 nav ul {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   list-style: none;
 }
 
@@ -185,10 +193,10 @@ nav a.nav-link {
   color: var(--muted);
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s ease;
   position: relative;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 
 nav a.nav-link:hover,
@@ -205,7 +213,7 @@ nav a.nav-link.active::after {
   height: 2px;
   background: var(--flutter-cyan);
   border-radius: 2px;
-  box-shadow: 0 0 8px var(--flutter-cyan);
+  box-shadow: 0 0 10px var(--flutter-cyan);
 }
 
 .nav-mobile-btn {
@@ -219,14 +227,14 @@ nav a.nav-link.active::after {
 
 /* Hero Section */
 .hero {
-  padding: 100px 0 80px;
+  padding: 104px 0 84px;
   border-top: none;
 }
 
 .hero .wrap {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
-  gap: 52px;
+  gap: 56px;
   align-items: center;
 }
 
@@ -234,16 +242,16 @@ nav a.nav-link.active::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 999px;
-  background: rgba(64, 208, 253, 0.1);
+  background: rgba(0, 229, 255, 0.1);
   color: var(--flutter-cyan);
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.9px;
   text-transform: uppercase;
-  border: 1px solid rgba(64, 208, 253, 0.3);
-  margin-bottom: 22px;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  margin-bottom: 24px;
 }
 
 .kicker-dot {
@@ -251,46 +259,48 @@ nav a.nav-link.active::after {
   height: 7px;
   border-radius: 50%;
   background: var(--accent-green);
-  box-shadow: 0 0 10px var(--accent-green);
+  box-shadow: 0 0 12px var(--accent-green);
   animation: pulseDot 2s infinite ease-in-out;
 }
 
 @keyframes pulseDot {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.85); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 .hero-profile-card {
-  background: linear-gradient(145deg, #141822, #0d1017);
+  background: linear-gradient(145deg, #131826, #090c14);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   padding: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-profile-card:hover {
-  border-color: rgba(64, 208, 253, 0.4);
-  transform: translateY(-3px);
+  border-color: rgba(0, 229, 255, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), var(--shadow-glow);
 }
 
 .hero-profile-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle 240px at 85% 15%, rgba(64, 208, 253, 0.12), transparent);
+  background: radial-gradient(circle 260px at 85% 15%, rgba(0, 229, 255, 0.14), transparent);
   pointer-events: none;
 }
 
 .profile-img-container {
   width: 100%;
-  height: 320px;
+  height: 330px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--line);
   position: relative;
+  background: #000;
 }
 
 .profile-img {
@@ -298,10 +308,29 @@ nav a.nav-link.active::after {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  display: block;
 }
 
 .hero-profile-card:hover .profile-img {
-  transform: scale(1.03);
+  transform: scale(1.04);
+}
+
+.profile-badge-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(7, 9, 14, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.4px;
 }
 
 .stats {
@@ -313,9 +342,13 @@ nav a.nav-link.active::after {
   border-top: 1px solid var(--line);
 }
 
+.stat-box {
+  text-align: center;
+}
+
 .stat-n {
   font-family: 'Fraunces', serif;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   background: linear-gradient(135deg, var(--text), var(--crema));
   -webkit-background-clip: text;
@@ -326,8 +359,9 @@ nav a.nav-link.active::after {
   font-size: 11px;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   margin-top: 2px;
+  font-weight: 600;
 }
 
 /* Buttons */
@@ -351,7 +385,7 @@ nav a.nav-link.active::after {
   transition: transform 0.18s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid var(--line);
   color: var(--text);
-  background: rgba(18, 21, 28, 0.85);
+  background: rgba(19, 24, 36, 0.85);
 }
 
 .btn:hover {
@@ -360,7 +394,7 @@ nav a.nav-link.active::after {
 }
 
 .btn.fill {
-  background: linear-gradient(135deg, var(--crema), #5ca0fa);
+  background: linear-gradient(135deg, var(--crema), #4996ff);
   color: #05070a;
   border-color: var(--crema);
   font-weight: 700;
@@ -368,24 +402,24 @@ nav a.nav-link.active::after {
 
 .btn.fill:hover {
   background: linear-gradient(135deg, #a3ccff, var(--crema));
-  box-shadow: 0 8px 24px rgba(125, 180, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(133, 186, 255, 0.4);
 }
 
 /* Download CV Premium Button */
 .btn-cv {
-  background: linear-gradient(135deg, #132742, #0d1e34);
+  background: linear-gradient(135deg, #112845, #0a1b32);
   color: var(--flutter-cyan);
-  border: 1px solid rgba(64, 208, 253, 0.4);
-  box-shadow: 0 4px 18px rgba(2, 86, 155, 0.25);
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  box-shadow: 0 4px 20px rgba(2, 86, 155, 0.35);
   font-weight: 600;
   letter-spacing: 0.2px;
 }
 
 .btn-cv:hover {
-  background: linear-gradient(135deg, #183357, #132742);
+  background: linear-gradient(135deg, #17375e, #112845);
   color: #ffffff;
   border-color: var(--flutter-cyan);
-  box-shadow: 0 6px 24px rgba(64, 208, 253, 0.4);
+  box-shadow: 0 6px 28px rgba(0, 229, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -398,7 +432,7 @@ nav a.nav-link.active::after {
   transform: translateY(2px);
 }
 
-/* About Grid */
+/* About Cards */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -409,25 +443,25 @@ nav a.nav-link.active::after {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 30px;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  border-color: rgba(64, 208, 253, 0.35);
-  transform: translateY(-3px);
+  border-color: rgba(0, 229, 255, 0.4);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-sm);
 }
 
 .card h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .card p {
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .pill-list {
@@ -442,9 +476,45 @@ nav a.nav-link.active::after {
   border-radius: var(--radius-sm);
   font-size: 12px;
   font-weight: 600;
-  background: rgba(35, 41, 55, 0.6);
+  background: rgba(30, 38, 56, 0.7);
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease;
+}
+
+.pill:hover {
+  border-color: var(--flutter-cyan);
+}
+
+/* Filter Tabs */
+.project-filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(19, 24, 36, 0.8);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+  border-color: var(--crema);
+  color: var(--text);
+}
+
+.filter-tab.active {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(2, 86, 155, 0.25));
+  border-color: var(--flutter-cyan);
+  color: var(--flutter-cyan);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
 }
 
 /* Projects Showcase */
@@ -452,18 +522,19 @@ nav a.nav-link.active::after {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  padding: 36px;
-  margin-bottom: 36px;
+  padding: 40px;
+  margin-bottom: 40px;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 44px;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .proj:hover {
-  border-color: rgba(64, 208, 253, 0.3);
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .proj-meta {
@@ -471,12 +542,13 @@ nav a.nav-link.active::after {
   align-items: center;
   gap: 12px;
   margin-bottom: 14px;
+  flex-wrap: wrap;
 }
 
 .proj-num {
   font-family: 'Fraunces', serif;
   color: var(--flutter-cyan);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -484,21 +556,31 @@ nav a.nav-link.active::after {
   font-size: 12px;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.9px;
   font-weight: 600;
 }
 
+.proj-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(133, 186, 255, 0.12);
+  border: 1px solid rgba(133, 186, 255, 0.25);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--crema);
+}
+
 .proj h3 {
-  font-size: 28px;
-  margin-bottom: 12px;
-  letter-spacing: -0.6px;
+  font-size: 30px;
+  margin-bottom: 14px;
+  letter-spacing: -0.7px;
 }
 
 .proj-desc {
   color: var(--muted);
   font-size: 15px;
-  margin-bottom: 22px;
-  line-height: 1.65;
+  margin-bottom: 24px;
+  line-height: 1.68;
 }
 
 .feat-list {
@@ -509,57 +591,73 @@ nav a.nav-link.active::after {
 .feat-list li {
   font-size: 13px;
   color: #c4cdd8;
-  padding: 7px 0;
+  padding: 8px 0;
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  border-bottom: 1px solid rgba(35, 41, 55, 0.4);
+  border-bottom: 1px solid rgba(30, 38, 56, 0.5);
 }
 
 .feat-list li:last-child {
   border-bottom: none;
 }
 
-.feat-arrow {
+.feat-icon {
   color: var(--flutter-cyan);
-  font-weight: 700;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-/* Shots Gallery */
+/* Phone Mockup Frame */
 .shots {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 16px;
   align-self: center;
 }
 
-.shot-wrap {
+.phone-frame {
   position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #000;
+  border-radius: var(--radius-phone);
+  background: #111622;
+  border: 3px solid #232c40;
+  padding: 6px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.8);
   cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.shots img {
+.phone-frame:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.phone-screen {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  height: 250px;
+}
+
+.phone-screen img {
   width: 100%;
-  height: 240px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.4s ease, filter 0.3s ease;
 }
 
-.shot-wrap:hover img {
-  transform: scale(1.05);
+.phone-frame:hover .phone-screen img {
+  transform: scale(1.06);
   filter: brightness(1.08);
 }
 
 .shot-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 13, 18, 0.4);
+  background: rgba(7, 9, 14, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -567,25 +665,26 @@ nav a.nav-link.active::after {
   transition: opacity 0.2s ease;
 }
 
-.shot-wrap:hover .shot-overlay {
+.phone-frame:hover .shot-overlay {
   opacity: 1;
 }
 
 .shot-zoom-badge {
-  background: rgba(2, 86, 155, 0.85);
+  background: rgba(2, 86, 155, 0.9);
   color: #fff;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(64, 208, 253, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
 /* Skills Section */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 24px;
 }
 
@@ -593,44 +692,56 @@ nav a.nav-link.active::after {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 26px;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .skill-category-card:hover {
-  border-color: rgba(64, 208, 253, 0.3);
-  transform: translateY(-2px);
+  border-color: rgba(0, 229, 255, 0.35);
+  transform: translateY(-3px);
 }
 
 .skill-cat-header {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   color: var(--crema);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+}
+
+.skill-cat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--flutter-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Contact Box */
 .contact-box {
-  background: linear-gradient(145deg, #12151c, #162032);
-  border: 1px solid rgba(64, 208, 253, 0.3);
+  background: linear-gradient(145deg, #10141e, #131d2e);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: var(--radius-xl);
-  padding: 56px 40px;
+  padding: 60px 44px;
   text-align: center;
-  max-width: 680px;
+  max-width: 700px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .contact-links {
   display: flex;
   justify-content: center;
   gap: 14px;
-  margin: 32px 0;
+  margin: 34px 0;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -639,9 +750,9 @@ nav a.nav-link.active::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 11px 22px;
   border-radius: var(--radius-md);
-  background: rgba(11, 13, 18, 0.7);
+  background: rgba(7, 9, 14, 0.75);
   border: 1px solid var(--line);
   color: var(--text);
   text-decoration: none;
@@ -658,7 +769,7 @@ nav a.nav-link.active::after {
 
 /* Footer */
 footer {
-  padding: 36px 0;
+  padding: 38px 0;
   text-align: center;
   font-size: 13px;
   color: var(--muted);
@@ -667,12 +778,12 @@ footer {
   z-index: 1;
 }
 
-/* Modal Lightbox for Screenshots */
+/* Lightbox Modal */
 .lightbox-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(5, 7, 10, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(3, 5, 8, 0.94);
+  backdrop-filter: blur(16px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -682,8 +793,8 @@ footer {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .lightbox-content {
@@ -693,32 +804,58 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #0d121c;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+.lightbox-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lightbox-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lightbox-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-img {
   max-width: 100%;
-  max-height: 82vh;
+  max-height: 75vh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(64, 208, 253, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  display: block;
 }
 
 .lightbox-close {
-  position: absolute;
-  top: -46px;
-  right: 0;
-  background: rgba(35, 41, 55, 0.8);
+  background: rgba(30, 38, 56, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text);
   padding: 6px 14px;
   border-radius: var(--radius-md);
   cursor: pointer;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 6px;
+  transition: all 0.2s ease;
 }
 
 .lightbox-close:hover {
@@ -726,17 +863,51 @@ footer {
   color: var(--flutter-cyan);
 }
 
-/* Responsive Media Queries */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13, 18, 28, 0.85);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--flutter-blue);
+  color: #fff;
+  border-color: var(--flutter-cyan);
+  box-shadow: 0 0 16px var(--flutter-cyan);
+}
+
+.lightbox-nav-btn.prev {
+  left: -22px;
+}
+
+.lightbox-nav-btn.next {
+  right: -22px;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   .hero .wrap {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 40px;
   }
 
   .proj {
     grid-template-columns: 1fr;
-    padding: 26px;
-    gap: 28px;
+    padding: 28px;
+    gap: 30px;
   }
 
   .grid-3 {
@@ -755,32 +926,32 @@ footer {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 68px;
+    top: 72px;
     left: 0;
     right: 0;
-    background: rgba(11, 13, 18, 0.98);
+    background: rgba(7, 9, 14, 0.98);
     border-bottom: 1px solid var(--line);
     padding: 24px;
     gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   }
 
   .shots {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .shots img {
-    height: 200px;
+  .phone-screen {
+    height: 210px;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 0 40px;
+    padding: 64px 0 44px;
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .lead {
@@ -788,7 +959,7 @@ footer {
   }
 
   .contact-box {
-    padding: 32px 18px;
+    padding: 36px 20px;
   }
 
   .btn {
@@ -796,7 +967,7 @@ footer {
     justify-content: center;
   }
 
-  .shots img {
+  .phone-screen {
     height: 180px;
   }
 }
